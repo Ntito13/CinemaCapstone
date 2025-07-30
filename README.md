@@ -1,4 +1,4 @@
-## My Repository Can Be Found Here: 
+## My Repository Can Be Found Here: https://github.com/Ntito13/CinemaCapstone/tree/main
 
 ## Introduction
 This is the git repository for your capstone project. You should use this repository throughout your development.
