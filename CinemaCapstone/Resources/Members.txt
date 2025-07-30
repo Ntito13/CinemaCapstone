@@ -1,0 +1,7 @@
+﻿[Loyalty%FirstName:Blaze%LastName:lovely%Email:blaze@gmail.com%Visits:4]
+[Loyalty%FirstName:Olare%LastName:Nkpe%Email:olare@gmail.com%Visits:9]
+[Gold%FirstName:Sebs%LastName:Mufasa%Email:sebastian@gmail.com%Visits:12%Expiry:01/05/2026]
+[Gold%FirstName:Benjamin%LastName:Busbarn%Email:benjamin@gmail.com%Visits:7%Expiry:15/12/2026]
+
+
+
