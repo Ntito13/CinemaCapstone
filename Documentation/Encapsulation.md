@@ -4,67 +4,28 @@ Here you should describe how you have used Encapsulation and Cohesion in your so
 
 You should use class diagrams and code snippets where appropriate.
 
-Here is an example of a code snippet in markdown
 
-```cs
-/// <summary>
-/// Prompts the user to enter an integer within a specified range.
-/// </summary>
-/// <param name="pMin">The minimum acceptable value (inclusive).</param>
-/// <param name="pMax">The maximum acceptable value (inclusive).</param>
-/// <param name="pMessage">The message to display to the user.</param>
-/// <returns>An integer entered by the user within the specified range.</returns>
-/// <exception cref="Exception">Thrown when the minimum value is greater than the maximum value.</exception>
-public static int GetIntegerInRange(int pMin, int pMax, string pMessage)
-{
-  if (pMin > pMax)
-  {
-    throw new Exception($"Minimum value {pMin} cannot be greater than maximum value {pMax}");
-  }
+ I used encapsulation to keep my code clean and under control. For example, in the LoyaltyMember class, things like the first name, last name, and email are set once when the member is created — and they can’t be changed later. This helps protect the data from being accidentally changed somewhere else.
 
-  int result;
+ // Member's personal details
+ public string FirstName { get; }
+ public string LastName { get; }
+ public string Email { get; }
 
-  do
-  {
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine(pMessage);
-    Console.WriteLine($"Please enter a number between {pMin} and {pMax} inclusive.");
 
-    Console.ForegroundColor = ConsoleColor.Green;
-    string userInput = Console.ReadLine();
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    try
-    {
-      result = int.Parse(userInput);
-    }
-    catch
-    {
-      Console.WriteLine($"{userInput} is not a number");
-      continue;
-    }
+Then i made use of cohesion by making sure each class has one clear job. For example, the RegisterMember class is only responsible for handling the logic of registering a new member. It contains methods like PromptForValidName and PromptForValidEmail, which are only related to registering someone. This makes it easier to manage, test, and update the code.
 
-    if (result >= pMin && result <= pMax)
-    {
-      return result;
-    }
-    Console.WriteLine($"{result} is not between {pMin} and {pMax} inclusive.");
-  } while (true);
-}
-```
 
-Here is an example of a class diagram in markdown
+        // Runs when this menu option is chosen
+        public override void Select()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Loyalty Member Registration ===");
 
-```mermaid
-classDiagram
-  BaseClass <|-- DerivedClass
-  BaseClass *-- ComponentClass
-  class BaseClass{
-    -int privateDataMember
-    -ComponentClass component
-    +publicMethod()
-  }
-  class ComponentClass{
-  }
-  class DerivedClass{
-  }
-```
+            string firstName = PromptForValidName("First Name: ");
+            string lastName = PromptForValidName("Last Name: ");
+            string email = PromptForValidEmail("Email: ");
+
+            var newMember = new LoyaltyMember(firstName, lastName, email);
+            _memberList.Add(newMember);
+            MemberLoader.SaveMembers(_savePath, _memberList);
