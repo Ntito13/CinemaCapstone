@@ -1,7 +1,0 @@
-﻿[Staff:000001%Level:Manager%FirstName:Ntito%LastName:Graham]
-[Staff:000002%Level:Manager%FirstName:Sannah%LastName:Codley]
-[Staff:000003%Level:General staff%FirstName:Jason%LastName:Mamoa]
-[Staff:000004%Level:General staff%FirstName:tems%LastName:Artist]
-[Staff:000005%Level:General staff%FirstName:frolic%LastName:Aimlessly]
-[Staff:000006%Level:General staff%FirstName:leo%LastName:Nardo]
-
